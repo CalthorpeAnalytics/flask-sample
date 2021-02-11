@@ -18,12 +18,18 @@ clean:
 	rm -rf .tox
 	rm -rf .mypy_cache
 	rm -f db/*
+	rm -rf .venv
+	find . -type d -name __pycache__ -exec rm -rf {} \+
 
 db-migrate:
-	docker-compose run --rm web flask db migrate
+	docker-compose run --rm \
+		-v $(PWD)/migrations/versions:/code/migrations/versions:rw \
+		web flask db migrate
 
 db-upgrade:
-	docker-compose run --rm web flask db upgrade
+	docker-compose run --rm \
+		-v $(PWD)/migrations/versions:/code/migrations/versions:ro \
+		web flask db upgrade
 
 test:
 	docker-compose run --rm \

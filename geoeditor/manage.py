@@ -10,15 +10,8 @@ def cli() -> None:
 @cli.command("init")
 @with_appcontext
 def init() -> None:
-    """Create a new admin user"""
-    from geoeditor.extensions import db
-    from geoeditor.models import User
-
-    click.echo("create user")
-    user = User(username="admin", email="admin@mail.com", password="admin", active=True)
-    db.session.add(user)
-    db.session.commit()
-    click.echo("created user admin")
+    """Initialize app for development"""
+    click.echo("Initialized app for development")
 
 
 if __name__ == "__main__":

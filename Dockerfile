@@ -13,7 +13,7 @@ WORKDIR /code
 
 RUN pip install --no-cache-dir --upgrade \
         pip==21.0.1 \
-        poetry-core==1.0.0 \
+        poetry-core==1.0.2 \
         poetry==1.1.4 \
     && rm -rf ~/.cache/pip
 
