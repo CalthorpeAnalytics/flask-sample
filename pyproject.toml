@@ -23,6 +23,10 @@ Flask-Migrate = "^2.6.0"
 Flask-SQLAlchemy = "^2.4.4"
 python-dotenv = "^0.15.0"
 PyYAML = "^5.4.1"
+marshmallow = "^3.10.0"
+marshmallow-dataclass = "^8.3.1"
+flask-smorest = "^0.28.0"
+flask-marshmallow = "^0.14.0"
 
 
 [tool.poetry.dev-dependencies]
