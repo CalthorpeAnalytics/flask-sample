@@ -1,6 +1,9 @@
 from flask import Flask
 
+from geoeditor.resources import project
+from geoeditor.extensions import api
 from geoeditor.extensions import db
+from geoeditor.extensions import ma
 from geoeditor.extensions import migrate
 
 
@@ -21,9 +24,11 @@ def create_app(testing: bool = False) -> Flask:
 def configure_extensions(app: Flask) -> None:
     """configure flask extensions"""
     db.init_app(app)
+    ma.init_app(app)
+    api.init_app(app)
     migrate.init_app(app, db)
 
 
 def register_blueprints(app: Flask) -> None:
     """register all blueprints for application"""
-    pass
+    api.register_blueprint(project.blueprint)
