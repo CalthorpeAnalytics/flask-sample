@@ -1,5 +1,6 @@
 from flask import Flask
 
+from geoeditor.resources import project
 from geoeditor.extensions import db
 from geoeditor.extensions import migrate
 
@@ -26,4 +27,4 @@ def configure_extensions(app: Flask) -> None:
 
 def register_blueprints(app: Flask) -> None:
     """register all blueprints for application"""
-    pass
+    app.register_blueprint(project.blueprint)

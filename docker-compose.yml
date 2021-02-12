@@ -5,7 +5,7 @@ services:
   web:
     image: geoeditor
     build: .
-    command: flask run --host 0.0.0.0 --port=8080
+    command: flask run --host 0.0.0.0 --port=8080 --reload
     env_file:
       - ./.flaskenv
     environment:
