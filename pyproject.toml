@@ -18,7 +18,7 @@ mypy = { version = "^0.800", optional = true }
 sqlalchemy-stubs = { version = "^0.4", optional = true }
 
 python = "^3.8"
-Flask = "^1.1.2"
+Flask = "^2.3.2"
 Flask-Migrate = "^2.6.0"
 Flask-SQLAlchemy = "^2.4.4"
 python-dotenv = "^0.15.0"
